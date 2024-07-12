@@ -1,20 +1,17 @@
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Arrax-app</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home <i class="bi bi-house"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
+<nav class="navbar navbar-expand-lg bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ route('home') }}">ARRAX-APP</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home <i class="bi bi-house-door"></i></a>
+        </li>
+		<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              RRHH <i class="bi bi-person-circle"></i>
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
@@ -22,11 +19,87 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>    
-        </ul>
-      </div>
+        </li>
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              FINANZAS <i class="bi bi-cash-coin"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </li>
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              MANTENEDORES <i class="bi bi-gear"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ route('afps.index') }}">AFP</a></li>
+              <li><a class="dropdown-item" href="#">BANCOS</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </li>
+	   <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+			
+					  <li class="nav-item dropdown drop-down02">
+						  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Dropdown
+						  </a>
+						  <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#">Action</a></li>
+							<li><a class="dropdown-item" href="#">Another action</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="#">Something else here</a></li>
+							
+									 <li class="nav-item dropdown drop-down02">
+										  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+											Dropdown
+										  </a>
+										  <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
+											<li><a class="dropdown-item" href="#">Action</a></li>
+											<li><a class="dropdown-item" href="#">Another action</a></li>
+											<li><hr class="dropdown-divider"></li>
+											<li><a class="dropdown-item" href="#">Something else here</a></li>
+											
+													 <li class="nav-item dropdown drop-down02">
+														  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+															Dropdown
+														  </a>
+														  <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
+															<li><a class="dropdown-item" href="#">Action</a></li>
+															<li><a class="dropdown-item" href="#">Another action</a></li>
+															<li><hr class="dropdown-divider"></li>
+															<li><a class="dropdown-item" href="#">Something else here</a></li>
+														  </ul>
+														</li>
+										  </ul>
+										</li>
+						  </ul>
+						</li>
+          </ul>
+        </li>
+		
+		
+		
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
+  </div>
 </nav>

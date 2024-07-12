@@ -12,11 +12,14 @@
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('icons/bootstrap-icons/font/bootstrap-icons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/menu-nav.css') }}" rel="stylesheet">
     @yield('css')
 </head>
 <body>       
     @include('layouts.nav')
     <div class="container-fluid">
+            @include('layouts.messages')
             @yield('content')
     </div>
     <footer class="footer">
@@ -30,6 +33,8 @@
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('jquery/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('js/datatables.min.js') }}"></script>
+    <script src="{{ asset('js/script-nav.js') }}"></script>
     @yield('js')
 </body>
 </html>
