@@ -28,7 +28,16 @@
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li class="nav-item dropdown drop-down02 dropend">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Mantenedores
+                  </a>
+                  <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{{ route('ccosto.index') }}">Centro de Costo</a></li>
+                  <li><a class="dropdown-item" href="{{ route('cuentap.index') }}">Cuentas Presupuestarias</a></li>
+                  <li><a class="dropdown-item" href="{{ route('tipo_doc.index') }}">Tipos de Documentos</a></li>
+                  </ul>
+                </li>
             </ul>
         </li>
 		<li class="nav-item dropdown">
@@ -36,8 +45,17 @@
               MANTENEDORES <i class="bi bi-gear"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ route('afps.index') }}">AFP</a></li>
-              <li><a class="dropdown-item" href="#">BANCOS</a></li>
+              <li><a class="dropdown-item" href="{{ route('afps.index') }}">Afp</a></li>
+                <li class="nav-item dropdown dropend drop-down02">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Bancos
+                  </a>
+                  <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{{ route('bancos.index') }}">Nuevo Banco</a></li>
+                  <li><a class="dropdown-item" href="{{ route('bancos.cuentas') }}">Tipos de Cuentas</a></li>
+                  </ul>
+                </li>
+                <li><a class="dropdown-item" href="{{ route('dpto.index') }}">Departamentos</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
