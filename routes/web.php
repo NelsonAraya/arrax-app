@@ -7,6 +7,9 @@ use App\Http\Controllers\CentroCostoController;
 use App\Http\Controllers\CuentaPresupuestariaController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\TipoDocumentoController;
+use App\Http\Controllers\EstadoUsuarioController;
+use App\Http\Controllers\EstadoDocumentoController;
+use App\Http\Controllers\FondoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +26,10 @@ Route::prefix('admin')->group(function () {
 	->name('bancos.all2');
     Route::get('/dpto/all',[DepartamentoController::class,'showAll'])
 	->name('dpto.all');
+    Route::get('/est/all',[EstadoUsuarioController::class,'showAll'])
+	->name('est.all');
+    Route::get('/est_doc/all',[EstadoDocumentoController::class,'showAll'])
+	->name('est_doc.all');
     Route::get('/bancos/cuentas',[BancoController::class,'indexCuenta'])
 	->name('bancos.cuentas');
     Route::get('/bancos/cuentas/create',[BancoController::class,'createCuenta'])
@@ -32,6 +39,8 @@ Route::prefix('admin')->group(function () {
     Route::resource('afps',AfpController::class);
     Route::resource('bancos',BancoController::class);
     Route::resource('dpto',DepartamentoController::class);
+    Route::resource('est',EstadoUsuarioController::class);
+    Route::resource('est_doc',EstadoDocumentoController::class);
 });
 
 Route::prefix('finanzas')->group(function () {
@@ -41,7 +50,10 @@ Route::prefix('finanzas')->group(function () {
 	->name('cuentap.all');
     Route::get('/tipo_doc/all',[TipoDocumentoController::class,'showAll'])
 	->name('tipo_doc.all');
+    Route::get('/fondos/all',[FondoController::class,'showAll'])
+	->name('fondos.all');
     Route::resource('ccosto',CentroCostoController::class);
     Route::resource('cuentap',CuentaPresupuestariaController::class);
     Route::resource('tipo_doc',TipoDocumentoController::class);
+    Route::resource('fondos',FondoController::class);
 });

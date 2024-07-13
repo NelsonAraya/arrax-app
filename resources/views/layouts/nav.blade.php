@@ -36,6 +36,7 @@
                   <li><a class="dropdown-item" href="{{ route('ccosto.index') }}">Centro de Costo</a></li>
                   <li><a class="dropdown-item" href="{{ route('cuentap.index') }}">Cuentas Presupuestarias</a></li>
                   <li><a class="dropdown-item" href="{{ route('tipo_doc.index') }}">Tipos de Documentos</a></li>
+                  <li><a class="dropdown-item" href="{{ route('fondos.index') }}">Fondos</a></li>
                   </ul>
                 </li>
             </ul>
@@ -57,7 +58,15 @@
                 </li>
                 <li><a class="dropdown-item" href="{{ route('dpto.index') }}">Departamentos</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li class="nav-item dropdown dropend drop-down02">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Estados Sistemas
+                </a>
+                <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ route('est.index') }}">Estados Usuarios</a></li>
+                <li><a class="dropdown-item" href="{{ route('est_doc.index') }}">Estados Documentos</a></li>
+                </ul>
+              </li>
             </ul>
         </li>
 	   <li class="nav-item dropdown">
