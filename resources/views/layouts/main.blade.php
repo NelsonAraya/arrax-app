@@ -19,6 +19,7 @@
 <body>       
     @include('layouts.nav')
     <div class="container-fluid">
+            @include('layouts.errors')
             @include('layouts.messages')
             @yield('content')
     </div>

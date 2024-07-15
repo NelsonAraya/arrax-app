@@ -5,13 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Departamento extends Model
+class MonedaValor extends Model
 {
     use HasFactory;
-    protected $table = "departamentos";
+    protected $table = "valor_tipo_cambios";
     public $timestamps = false;
-
-    public function fondos(){
-        return $this->hasMany(Fondo::class,'departamento_id','id');
-    }
 }

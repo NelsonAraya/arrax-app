@@ -17,7 +17,16 @@
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li class="nav-item dropdown drop-down02 dropend">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mantenedores
+                </a>
+                <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{{ route('ccosto.index') }}">Nacionalidades</a></li>
+                <li><a class="dropdown-item" href="{{ route('cuentap.index') }}">Previsiones</a></li>
+                <li><a class="dropdown-item" href="{{ route('tipo_doc.index') }}">Profesiones</a></li>
+                </ul>
+              </li>
             </ul>
         </li>
 		<li class="nav-item dropdown">
@@ -37,6 +46,16 @@
                   <li><a class="dropdown-item" href="{{ route('cuentap.index') }}">Cuentas Presupuestarias</a></li>
                   <li><a class="dropdown-item" href="{{ route('tipo_doc.index') }}">Tipos de Documentos</a></li>
                   <li><a class="dropdown-item" href="{{ route('fondos.index') }}">Fondos</a></li>
+                  <li><a class="dropdown-item" href="{{ route('proveedores.index') }}">Proveedores</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown dropend drop-down02">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Monedas Sistemas
+                  </a>
+                  <ul class="dropdown-menu sub-menu02" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{{ route('monedas.index') }}">Agregar Moneda</a></li>
+                  <li><a class="dropdown-item" href="{{ route('monedasValor.index') }}">Valor Moneda</a></li>
                   </ul>
                 </li>
             </ul>

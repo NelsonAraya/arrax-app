@@ -1,3 +1,9 @@
+.active {
+    /* Tus estilos personalizados */
+    background-color: rgb(0, 132, 255); /* Ejemplo: fondo rojo */
+    color: #fff !important;             /* Ejemplo: texto blanco */
+}
+
 .drop-down02{
 	position:relative;
 }
@@ -20,10 +26,11 @@
 	}
 }
 .navbar-nav .nav-link {
-    color: #00FF00; /* Color verde */
+    color: #0f0c0d; /* Color verde */
 }
 
 /* Estilo para el hover */
 .navbar-nav .nav-link:hover {
-    color: #af1919; /* Cambia el color al pasar el cursor (blanco en este caso) */
+    color: #0ec5fd; /* Cambia el color al pasar el cursor (blanco en este caso) */
 }
+

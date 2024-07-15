@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Fondo;
+use App\Models\Departamento;
 
 class FondoController extends Controller
 {
@@ -20,7 +21,8 @@ class FondoController extends Controller
      */
     public function create()
     {
-        return view('finanzas.mantenedores.fondos.create');
+        $dpto = Departamento::all();
+        return view('finanzas.mantenedores.fondos.create')->with('dpto',$dpto);
     }
 
     /**
@@ -28,7 +30,24 @@ class FondoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre_fondo' => 'required',
+            'nombre_monto' => 'required',
+            'nombre_completo' => 'required',
+            'anio_fondo' => 'required',
+            'cb_dpto' => 'required',
+        ]);
+        
+        $x = new Fondo();
+        $x->nombre = ucwords(strtolower($request->nombre_fondo));
+        $x->monto = $request->nombre_monto;
+        $x->nombre_completo = ucwords(strtolower($request->nombre_completo));
+        $x->anio = $request->anio_fondo;
+        $x->departamento_id = $request->cb_dpto;
+        $x->save();
+
+        session()->flash('success', 'FONDO guardado Correctamente');
+        return redirect()->route('fondos.index');
     }
 
     /**
@@ -63,10 +82,26 @@ class FondoController extends Controller
         //
     }
     public function showAll(){
-        $row = Fondo::all();
-        $response = array(
-            "aaData" => $row
-         );
-        return response()->json($response);
+
+            // Cargar los fondos con su relación de departamento utilizando eager loading
+            $fondos = Fondo::with('departamento')->get();
+
+            // Transformar los datos para incluir el nombre del departamento
+            $fondos = $fondos->map(function($fondo) {
+                return [
+                    'id' => $fondo->id,
+                    'nombre' => $fondo->nombre,
+                    'anio' => $fondo->anio,
+                    'nom_dpto' => $fondo->departamento ? $fondo->departamento->nombre : null, // Manejar caso de null
+                ];
+            });
+
+            // Preparar la respuesta
+            $response = [
+                "aaData" => $fondos
+            ];
+
+            // Retornar la respuesta en formato JSON
+            return response()->json($response);
     }
 }

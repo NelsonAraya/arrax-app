@@ -10,4 +10,8 @@ class Fondo extends Model
     use HasFactory;
     protected $table = "fondos";
     public $timestamps = false;
+
+    public function departamento(){
+        return $this->belongsTo(Departamento::class,'departamento_id','id');
+    }
 }

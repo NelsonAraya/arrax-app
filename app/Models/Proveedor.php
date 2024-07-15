@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Departamento extends Model
+class Proveedor extends Model
 {
     use HasFactory;
-    protected $table = "departamentos";
+    protected $table = "proveedores";
     public $timestamps = false;
 
-    public function fondos(){
-        return $this->hasMany(Fondo::class,'departamento_id','id');
-    }
+    public function runCompleto() {
+        return number_format($this->id, 0,'.','.') . '-' . $this->dv;
+      }
 }
