@@ -36,6 +36,8 @@ Route::prefix('admin')->group(function () {
 	->name('est_doc.all');
     Route::get('/monedas/all',[MonedaController::class,'showAll'])
 	->name('monedas.all');
+    Route::get('/monedasValor/all',[MonedaValorController::class,'showAll'])
+	->name('monedasValor.all');
     Route::get('/bancos/cuentas',[BancoController::class,'indexCuenta'])
 	->name('bancos.cuentas');
     Route::get('/bancos/cuentas/create',[BancoController::class,'createCuenta'])

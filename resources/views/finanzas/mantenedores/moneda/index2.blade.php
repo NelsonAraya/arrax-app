@@ -21,6 +21,7 @@
                     <th>ID</th>
                     <th>NOMBRE MONEDA</th>
                     <th>VALOR MONEDA</th>
+                    <th>FECHA</th>
                 </tr>
             </thead>
             </table>
@@ -34,11 +35,12 @@
 <script>
 $(document).ready(function() {
   $('#tbl_valor').DataTable({
-    "ajax": '{{ route('monedas.all')}}',
+    "ajax": '{{ route('monedasValor.all')}}',
     "columns": [
             { data: 'id' },
-            { data: 'nombre' },
-            { data: 'codigo' }            
+            { data: 'nombre_moneda' },
+            { data: 'valor_moneda' },
+            { data: 'fecha' }             
     ],
     "language": {
         url: '{{ asset('json/es-MX.json') }}'

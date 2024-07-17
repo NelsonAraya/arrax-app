@@ -55,7 +55,7 @@ class MonedaValorController extends Controller
             $x->save();
 
             session()->flash('success', 'VALOR DE LA MONEDA guardada Correctamente');
-            return redirect()->route('monedas.index');
+            return redirect()->route('monedasValor.index');
 
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->validator->errors())->withInput();
@@ -93,4 +93,27 @@ class MonedaValorController extends Controller
     {
         //
     }
+    public function showAll(){
+
+        // Cargar los valores con su relación utilizando eager loading
+        $x = MonedaValor::with('moneda')->get();
+
+        // Transformar los datos para incluir el nombre 
+        $x = $x->map(function($x) {
+            return [
+                'id' => $x->id,
+                'nombre_moneda' => $x->moneda->codigo,
+                'valor_moneda' => $x->valor,
+                'fecha' => $x->fecha
+            ];
+        });
+
+        // Preparar la respuesta
+        $response = [
+            "aaData" => $x
+        ];
+
+        // Retornar la respuesta en formato JSON
+        return response()->json($response);
+}
 }
